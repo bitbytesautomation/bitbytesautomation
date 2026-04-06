@@ -14,6 +14,6 @@ if (form) {
       status.textContent = 'Sending your message...';
     }
 
-    // ✅ DO NOT prevent default — Formspree needs to receive the request
+    // Let Make webhook handle submission
   });
 }
