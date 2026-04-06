@@ -25,12 +25,12 @@ themeToggles.forEach((toggle) => {
   });
 });
 
-const form = document.querySelector('.contact-form');
+const contactFormShared = document.querySelector('.contact-form');
 
-if (form && !form.dataset.inlineHandled) {
-  form.addEventListener('submit', () => {
-    const button = form.querySelector('button');
-    const status = form.querySelector('.form-status');
+if (contactFormShared && !contactFormShared.dataset.inlineHandled) {
+  contactFormShared.addEventListener('submit', () => {
+    const button = contactFormShared.querySelector('button');
+    const status = contactFormShared.querySelector('.form-status');
 
     if (button) {
       button.innerText = 'Sending...';
