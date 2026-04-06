@@ -1,19 +1,17 @@
-const form = document.querySelector('.contact-form');
+const toggle = document.querySelector(".dark-toggle");
 
-if (form) {
-  form.addEventListener('submit', () => {
-    const button = form.querySelector('button');
-    const status = form.querySelector('.form-status');
+if (toggle) {
+  if (localStorage.getItem("darkMode") === "on") {
+    document.body.classList.add("dark");
+  }
 
-    if (button) {
-      button.innerText = 'Sending...';
-      button.disabled = true;
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("darkMode", "on");
+    } else {
+      localStorage.setItem("darkMode", "off");
     }
-
-    if (status) {
-      status.textContent = 'Sending your message...';
-    }
-
-    // Let Make webhook handle submission
   });
 }
