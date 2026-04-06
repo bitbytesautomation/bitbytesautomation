@@ -42,11 +42,8 @@
         <div class="detail-card">
           <h2>Get in touch</h2>
 
-          <!-- ✅ FORM UPDATED HERE -->
           <form class="contact-form" action="https://formspree.io/f/mlgoanvy" method="POST">
-            
-            <!-- Optional subject -->
-            <input type="hidden" name="_subject" value="New BitBytes Lead 🚀">
+            <input type="hidden" name="_subject" value="New BitBytes Lead" />
 
             <label>
               Full Name
@@ -70,7 +67,12 @@
 
             <label>
               Message
-              <textarea name="message" rows="6" placeholder="Tell me a bit about your business and what you want help with." required></textarea>
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Tell me a bit about your business and what you want help with."
+                required
+              ></textarea>
             </label>
 
             <button class="btn btn-primary" type="submit">Send Message</button>
