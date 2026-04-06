@@ -4,23 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | BitBytes Automation</title>
-  <meta name="description" content="Contact BitBytes Automation to build a better lead response system for your business." />
-  
+  <meta name="description" content="Contact BitBytes Automation to set up a faster, simpler lead response system for your business." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html">
-        <div>
-          <span class="brand-main">BitBytes</span>
-          <span class="brand-sub">automation</span>
-        </div>
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
       </a>
 
       <nav class="nav">
@@ -29,6 +24,7 @@
         <a href="case-study.html">How It Works</a>
         <a href="pricing.html">Pricing</a>
         <a href="contact.html" class="active nav-cta">Contact</a>
+        <button type="button" class="theme-toggle" aria-pressed="false">Dark Mode</button>
       </nav>
     </div>
   </header>
@@ -37,70 +33,63 @@
     <section class="page-hero">
       <div class="container narrow">
         <p class="eyebrow">Contact</p>
-        <h1>Let’s build a better lead response system.</h1>
-        <p>
-          Every message here triggers your automation system — this is your live demo.
-        </p>
+        <h1>Want faster replies and better follow-up for your leads?</h1>
+        <p>Send a message below. This page also acts as a live example of how the system responds.</p>
       </div>
     </section>
 
     <section class="services">
       <div class="container contact-layout">
-
-        <!-- FORM -->
         <div class="detail-card">
-          <h2>Get in touch</h2>
+          <h2>Send a message</h2>
 
-          <form class="contact-form" id="contactForm">
-            
+          <form class="contact-form" id="contactForm" data-inline-handled="true">
             <label>
               Full Name
-              <input type="text" name="name" required />
+              <input type="text" name="name" placeholder="Your full name" required />
             </label>
 
             <label>
               Business Name
-              <input type="text" name="business" />
+              <input type="text" name="business" placeholder="Your business name" />
             </label>
 
             <label>
               Email
-              <input type="email" name="email" required />
+              <input type="email" name="email" placeholder="you@example.com" required />
             </label>
 
             <label>
               Phone
-              <input type="tel" name="phone" />
+              <input type="tel" name="phone" placeholder="Your phone number" />
             </label>
 
             <label>
               Message
-              <textarea name="message" rows="6"></textarea>
+              <textarea name="message" rows="6" placeholder="Tell me what kind of leads you want help with."></textarea>
             </label>
 
             <button class="btn btn-primary" type="submit">
               Send Message
             </button>
 
-            <p class="form-status"></p>
+            <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
 
-        <!-- SIDE INFO -->
         <div class="detail-card">
           <h2>Direct contact</h2>
           <p><strong>Email:</strong> <a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
-          <p><strong>Best use:</strong> business owners, referrals, and demo requests.</p>
+          <p><strong>Good for:</strong> demo requests, referrals, and business owners who want a better lead process.</p>
 
           <div class="note-box">
-            <strong>Automation demo:</strong>
+            <strong>Live demo:</strong>
             <p>
-              Submit this form and watch how fast you get a response.
-              This is the same system we build for clients.
+              Submit this form and you’ll see how fast the response system works.
+              This is the same kind of setup we build for clients.
             </p>
           </div>
         </div>
-
       </div>
     </section>
   </main>
@@ -109,7 +98,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>BitBytes</strong><span class="footer-sub">automation</span>
-        <p>Professional lead automation for growing businesses.</p>
+        <p>Lead follow-up systems for growing businesses.</p>
       </div>
       <div>
         <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
@@ -117,38 +106,36 @@
     </div>
   </footer>
 
-  <!-- 🔥 CUSTOM SUBMIT SCRIPT -->
   <script>
-  const form = document.getElementById('contactForm');
+    const form = document.getElementById('contactForm');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const button = form.querySelector('button');
-    const status = form.querySelector('.form-status');
+      const button = form.querySelector('button');
+      const status = form.querySelector('.form-status');
 
-    button.innerText = "Sending...";
-    button.disabled = true;
-    status.textContent = "Sending your message...";
+      button.innerText = "Sending...";
+      button.disabled = true;
+      status.textContent = "Sending your message...";
 
-    const formData = new FormData(form);
+      const formData = new FormData(form);
 
-    try {
-      await fetch("https://hook.us2.make.com/t4xvitutoqatbmic4ubmklgykotide6e", {
-        method: "POST",
-        body: formData
-      });
+      try {
+        await fetch("https://hook.us2.make.com/t4xvitutoqatbmic4ubmklgykotide6e", {
+          method: "POST",
+          body: formData
+        });
 
-      // ✅ Redirect after success
-      window.location.href = "thank-you.html";
+        window.location.href = "thank-you.html";
+      } catch (error) {
+        status.textContent = "Something went wrong. Please try again.";
+        button.innerText = "Send Message";
+        button.disabled = false;
+      }
+    });
+  </script>
 
-    } catch (error) {
-      status.textContent = "❌ Something went wrong. Try again.";
-      button.innerText = "Send Message";
-      button.disabled = false;
-    }
-  });
-</script>
-
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
