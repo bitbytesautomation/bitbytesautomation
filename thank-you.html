@@ -10,22 +10,39 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case-study.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+        <button type="button" class="theme-toggle" aria-pressed="false">Dark Mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main style="min-height: calc(100vh - 100px); display: flex; align-items: center; justify-content: center; text-align: center;">
     <div class="detail-card" style="max-width: 640px; padding: 2.5rem; margin: 1rem;">
       <p class="eyebrow">Message received</p>
 
-      <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.05em; margin: 0 0 1rem;">You're all set ✅</h1>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.05em; margin: 0 0 1rem;">You’re all set ✅</h1>
 
-      <p style="margin-top: 1rem; font-size: 1.1rem; color: #607089;">
-        Your message has been received.
+      <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--muted);">
+        Your message was sent successfully.
       </p>
 
-      <p style="margin-top: 1rem; color: #607089;">
-        Check your email — you should have received a response instantly.
+      <p style="margin-top: 1rem; color: var(--muted);">
+        Check your email. You should receive a reply shortly.
       </p>
 
-      <p style="margin-top: 1rem; color: #607089;">
-        This is exactly how the BitBytes system works for your business.
+      <p style="margin-top: 1rem; color: var(--muted);">
+        This is the same kind of fast follow-up system BitBytes builds for clients.
       </p>
 
       <a href="index.html" class="btn btn-primary" style="margin-top: 2rem;">
@@ -33,5 +50,7 @@
       </a>
     </div>
   </main>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
