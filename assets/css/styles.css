@@ -1,28 +1,4 @@
 :root {
-  --bg: #f4f7fc;
-  --bg-2: #eef3fb;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 255, 255, 0.9);
-  --surface-solid: #ffffff;
-  --text: #132033;
-  --muted: #607089;
-  --line: rgba(19, 32, 51, 0.08);
-  --line-strong: rgba(19, 32, 51, 0.12);
-  --accent: #315efb;
-  --accent-2: #4a86ff;
-  --accent-soft: rgba(49, 94, 251, 0.1);
-  --accent-soft-2: rgba(74, 134, 255, 0.12);
-  --dark: #0f1727;
-  --shadow-sm: 0 10px 30px rgba(17, 24, 39, 0.05);
-  --shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
-  --shadow-lg: 0 30px 90px rgba(17, 24, 39, 0.12);
-  --radius-sm: 16px;
-  --radius: 24px;
-  --radius-lg: 30px;
-  --max-width: 1120px;
-}
-
-body.dark {
   --bg: #0d1424;
   --bg-2: #131d33;
   --surface: rgba(21, 31, 52, 0.74);
@@ -36,10 +12,17 @@ body.dark {
   --accent-2: #80b3ff;
   --accent-soft: rgba(110, 151, 255, 0.14);
   --accent-soft-2: rgba(128, 179, 255, 0.16);
+  --dark: #0f1727;
   --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.22);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
   --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.35);
+  --radius-sm: 16px;
+  --radius: 24px;
+  --radius-lg: 30px;
+  --max-width: 1120px;
 }
+
+/* Dark mode toggle removed: site now uses the dark theme by default. */
 
 * {
   box-sizing: border-box;
@@ -55,22 +38,15 @@ body {
   color: var(--text);
   line-height: 1.6;
   background:
-    radial-gradient(circle at 0% 0%, rgba(49, 94, 251, 0.13), transparent 28%),
-    radial-gradient(circle at 100% 12%, rgba(74, 134, 255, 0.1), transparent 24%),
-    radial-gradient(circle at 85% 88%, rgba(81, 203, 238, 0.09), transparent 22%),
-    linear-gradient(180deg, #f8fbff 0%, #f2f6fc 55%, #eef3fb 100%);
+    radial-gradient(circle at 0% 0%, rgba(110, 151, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 100% 12%, rgba(128, 179, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 85% 88%, rgba(81, 203, 238, 0.06), transparent 22%),
+    linear-gradient(180deg, #0b1220 0%, #0f182b 55%, #131d33 100%);
   position: relative;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-body.dark {
-  background:
-    radial-gradient(circle at 0% 0%, rgba(110, 151, 255, 0.12), transparent 28%),
-    radial-gradient(circle at 100% 12%, rgba(128, 179, 255, 0.08), transparent 24%),
-    radial-gradient(circle at 85% 88%, rgba(81, 203, 238, 0.06), transparent 22%),
-    linear-gradient(180deg, #0b1220 0%, #0f182b 55%, #131d33 100%);
-}
 
 body::before,
 body::after {
@@ -138,11 +114,7 @@ textarea {
 }
 
 /* 🔥 FIX: kept the dark header fully solid too so dark mode behaves the same */
-body.dark .site-header {
-  background: rgba(8, 16, 34, 0.96);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
-}
+/* Dark header override no longer needed because dark theme is the default. */
 
 /* 🔥 FIX: gave the header a stable minimum height so the larger logo doesn't crush the nav */
 .nav-wrap {
@@ -177,9 +149,6 @@ body.dark .site-header {
   filter: drop-shadow(0 0 14px rgba(49, 94, 251, 0.45));
 }
 
-body.dark .brand:hover .brand-logo {
-  filter: drop-shadow(0 0 16px rgba(110, 151, 255, 0.55)) drop-shadow(0 0 38px rgba(128, 179, 255, 0.32));
-}
 
 @keyframes logoEntrance {
   0% {
@@ -239,32 +208,8 @@ body.dark .brand:hover .brand-logo {
   box-shadow: var(--shadow-sm);
 }
 
-body.dark .nav-cta {
-  background: rgba(255, 255, 255, 0.04);
-}
 
-.theme-toggle {
-  appearance: none;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--text);
-  box-shadow: var(--shadow-sm);
-  border-radius: 999px;
-  padding: 0.78rem 1rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-  background: var(--surface-solid);
-  border-color: var(--line-strong);
-}
-
-body.dark .theme-toggle {
-  background: rgba(255, 255, 255, 0.04);
-}
+/* Dark mode toggle removed. */
 
 main {
   position: relative;
@@ -298,7 +243,7 @@ main {
 .page-hero h1,
 .video-intro h2,
 .services h2,
-process h2,
+.process h2,
 .cta-band h2 {
   font-size: clamp(2.35rem, 5vw, 4.6rem);
   line-height: 0.98;
@@ -400,10 +345,6 @@ process h2,
   border-color: var(--line-strong);
 }
 
-body.dark .btn-secondary,
-body.dark .btn-light {
-  background: rgba(255, 255, 255, 0.04);
-}
 
 .hero-points {
   margin: 1.2rem 0 0;
@@ -462,15 +403,6 @@ body.dark .btn-light {
   pointer-events: none;
 }
 
-body.dark .dashboard-card::before,
-body.dark .detail-card::before,
-body.dark .info-card::before,
-body.dark .quote-card::before,
-body.dark .step::before,
-body.dark .note-box::before,
-body.dark .video-placeholder::before {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
-}
 
 .dashboard-card {
   padding: 1.3rem;
@@ -504,10 +436,6 @@ body.dark .video-placeholder::before {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-body.dark .metric-box {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
-}
 
 .metric-box strong {
   display: block;
@@ -595,9 +523,6 @@ body.dark .metric-box {
     linear-gradient(180deg, rgba(255,255,255,0.94), rgba(241,245,255,0.88));
 }
 
-body.dark .video-placeholder {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-}
 
 .video-placeholder.tall {
   min-height: 360px;
@@ -648,10 +573,6 @@ body.dark .video-placeholder {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-body.dark .contact-form input,
-body.dark .contact-form textarea {
-  background: rgba(255, 255, 255, 0.04);
-}
 
 .contact-form textarea {
   resize: vertical;
@@ -665,10 +586,6 @@ body.dark .contact-form textarea {
   background: #ffffff;
 }
 
-body.dark .contact-form input:focus,
-body.dark .contact-form textarea:focus {
-  background: rgba(255, 255, 255, 0.06);
-}
 
 .form-status {
   min-height: 1.5rem;
@@ -800,8 +717,7 @@ body.dark .contact-form textarea:focus {
     width: 100%;
   }
 
-  .nav-cta,
-  .theme-toggle {
+  .nav-cta {
     width: auto;
   }
 
