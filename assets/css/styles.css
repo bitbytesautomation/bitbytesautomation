@@ -1,83 +1,147 @@
-:root {
-  --bg: #f4f7fc;
-  --text: #132033;
-  --accent: #315efb;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | BitBytes Automation</title>
+  <meta name="description" content="Simple pricing for lead response automation systems by BitBytes Automation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <div>
+          <span class="brand-main">BitBytes</span>
+          <span class="brand-sub">automation</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case-study.html">How It Works</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-/* DARK MODE */
-body.dark {
-  --bg: #0f1727;
-  --text: #f1f5ff;
-}
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Pricing</p>
+        <h1>Simple pricing for faster lead response.</h1>
+        <p>
+          BitBytes Automation installs systems that instantly respond to leads,
+          follow up automatically, and help businesses stop losing easy opportunities.
+        </p>
+      </div>
+    </section>
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+    <section class="services">
+      <div class="container">
+        <div class="cards three-up">
+          <article class="detail-card">
+            <p class="section-tag">Starter</p>
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">$149 setup</h2>
+            <p>Best for businesses that want a clean, simple lead follow-up system installed fast.</p>
+            <ul class="detail-list" style="margin-top: 1rem;">
+              <li>Lead form automation setup</li>
+              <li>Instant reply email</li>
+              <li>Lead tracking sheet</li>
+              <li>Basic follow-up flow</li>
+              <li>Setup + testing</li>
+            </ul>
+            <div class="hero-actions" style="margin-top: 1.5rem;">
+              <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+          </article>
 
-/* HEADER */
-.site-header {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.7);
-}
+          <article class="detail-card">
+            <p class="section-tag">Support</p>
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">$29/month</h2>
+            <p>For businesses that want ongoing updates, tweaks, and help keeping things running smoothly.</p>
+            <ul class="detail-list" style="margin-top: 1rem;">
+              <li>Workflow edits</li>
+              <li>Email copy changes</li>
+              <li>Basic maintenance</li>
+              <li>Small system updates</li>
+              <li>Light support</li>
+            </ul>
+            <div class="hero-actions" style="margin-top: 1.5rem;">
+              <a href="contact.html" class="btn btn-secondary">Ask About Support</a>
+            </div>
+          </article>
 
-.nav-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-}
+          <article class="detail-card">
+            <p class="section-tag">Custom</p>
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Custom quote</h2>
+            <p>For businesses that want something more advanced than the standard setup.</p>
+            <ul class="detail-list" style="margin-top: 1rem;">
+              <li>SMS alerts</li>
+              <li>Booking flow integration</li>
+              <li>Multi-step follow-ups</li>
+              <li>Advanced automation</li>
+              <li>Custom setup for your workflow</li>
+            </ul>
+            <div class="hero-actions" style="margin-top: 1.5rem;">
+              <a href="contact.html" class="btn btn-secondary">Request a Quote</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-/* LOGO */
-.brand img {
-  height: clamp(32px, 4vw, 48px);
-  animation: logoFade 0.8s ease forwards;
-  transition: all 0.3s ease;
-}
+    <section class="video-intro">
+      <div class="container intro-wrap">
+        <div>
+          <p class="section-tag">What’s included</p>
+          <h2>Built to save time and help you follow up faster.</h2>
+          <p>
+            Every setup is designed to make new leads feel attended to immediately,
+            while keeping your business organized behind the scenes.
+          </p>
+        </div>
+        <div class="detail-card">
+          <h3>Good fit for:</h3>
+          <ul class="detail-list" style="margin-top: 1rem;">
+            <li>Contractors</li>
+            <li>Detailers</li>
+            <li>Barbers</li>
+            <li>Gyms</li>
+            <li>Cleaners</li>
+            <li>Local service businesses</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-.brand img:hover {
-  filter: drop-shadow(0 0 10px rgba(49,94,251,0.7));
-  transform: scale(1.05);
-}
+    <section class="cta-band">
+      <div class="container cta-band-wrap">
+        <div>
+          <p class="section-tag light">Ready to stop losing leads?</p>
+          <h2>Let’s set up a system that responds instantly and follows up automatically.</h2>
+        </div>
+        <a href="contact.html" class="btn btn-light">Contact BitBytes</a>
+      </div>
+    </section>
+  </main>
 
-@keyframes logoFade {
-  from {opacity:0; transform: translateY(-6px);}
-  to {opacity:1; transform: translateY(0);}
-}
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>BitBytes</strong><span class="footer-sub">automation</span>
+        <p>Professional lead automation for growing businesses.</p>
+      </div>
+      <div>
+        <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
+      </div>
+    </div>
+  </footer>
 
-/* NAV */
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--text);
-}
-
-/* BUTTON */
-.btn {
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-}
-
-/* DARK TOGGLE */
-.dark-toggle {
-  cursor: pointer;
-  border-radius: 999px;
-  padding: 6px 10px;
-  background: white;
-}
-
-body.dark .dark-toggle {
-  background: #1f2937;
-  color: white;
-}
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
