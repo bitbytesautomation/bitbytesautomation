@@ -119,37 +119,36 @@
 
   <!-- 🔥 CUSTOM SUBMIT SCRIPT -->
   <script>
-    const form = document.getElementById('contactForm');
+  const form = document.getElementById('contactForm');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      const button = form.querySelector('button');
-      const status = form.querySelector('.form-status');
+    const button = form.querySelector('button');
+    const status = form.querySelector('.form-status');
 
-      button.innerText = "Sending...";
-      button.disabled = true;
-      status.textContent = "Sending your message...";
+    button.innerText = "Sending...";
+    button.disabled = true;
+    status.textContent = "Sending your message...";
 
-      const formData = new FormData(form);
+    const formData = new FormData(form);
 
-      try {
-        await fetch("https://hook.us2.make.com/t4xvitutoqatbmic4ubmklgykotide6e", {
-          method: "POST",
-          body: formData
-        });
+    try {
+      await fetch("https://hook.us2.make.com/t4xvitutoqatbmic4ubmklgykotide6e", {
+        method: "POST",
+        body: formData
+      });
 
-        status.textContent = "✅ Message sent successfully!";
-        button.innerText = "Sent!";
-        form.reset();
+      // ✅ Redirect after success
+      window.location.href = "thank-you.html";
 
-      } catch (error) {
-        status.textContent = "❌ Something went wrong. Try again.";
-        button.innerText = "Send Message";
-        button.disabled = false;
-      }
-    });
-  </script>
+    } catch (error) {
+      status.textContent = "❌ Something went wrong. Try again.";
+      button.innerText = "Send Message";
+      button.disabled = false;
+    }
+  });
+</script>
 
 </body>
 </html>
