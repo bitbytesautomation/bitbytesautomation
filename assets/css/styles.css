@@ -372,6 +372,20 @@ a {
 .contact-form {
   display: grid;
   gap: 1rem;
+  position: relative;
+}
+
+.contact-form::before {
+  content: 'LIVE DEMO';
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
 }
 
 .contact-form label {
@@ -424,6 +438,45 @@ a {
 .site-footer p,
 .site-footer a {
   color: var(--muted);
+}
+
+/* ===== NEW ENHANCEMENTS ===== */
+
+.hero h1 {
+  background: linear-gradient(135deg, #132033, #315efb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info-card,
+.step,
+.detail-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover,
+.step:hover,
+.detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(17, 24, 39, 0.12);
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
 }
 
 @media (max-width: 900px) {
