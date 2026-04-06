@@ -124,29 +124,33 @@ textarea {
   max-width: 760px;
 }
 
+/* 🔥 FIX: made header solid and raised z-index so page content no longer shows through while scrolling */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 30;
+  z-index: 1000;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(248, 251, 255, 0.75);
-  border-bottom: 1px solid rgba(19, 32, 51, 0.06);
-  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.03);
+  background: rgba(8, 16, 34, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 🔥 FIX: kept the dark header fully solid too so dark mode behaves the same */
 body.dark .site-header {
-  background: rgba(13, 20, 36, 0.75);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  background: rgba(8, 16, 34, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
 }
 
+/* 🔥 FIX: gave the header a stable minimum height so the larger logo doesn't crush the nav */
 .nav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.55rem 0;
+  min-height: 130px;
+  padding: 1rem 0;
   gap: 1.25rem;
 }
 
@@ -157,8 +161,9 @@ body.dark .site-header {
   flex-shrink: 0;
 }
 
+/* 🔥 FIX: kept the logo large, but toned it down slightly so it stays readable with the navigation */
 .brand-logo {
-  height: clamp(120px, 18vw, 220px);
+  height: clamp(100px, 14vw, 180px);
   width: auto;
   object-fit: contain;
   animation: logoEntrance 0.8s ease both;
@@ -166,9 +171,10 @@ body.dark .site-header {
   transform-origin: center;
 }
 
+/* 🔥 FIX: slightly softened the hover animation so the big logo doesn't feel jumpy */
 .brand:hover .brand-logo {
   transform: translateY(-1px) scale(1.03);
-  filter: drop-shadow(0 0 14px rgba(49, 94, 251, 0.42)) drop-shadow(0 0 34px rgba(74, 134, 255, 0.26));
+  filter: drop-shadow(0 0 14px rgba(49, 94, 251, 0.45));
 }
 
 body.dark .brand:hover .brand-logo {
@@ -273,8 +279,9 @@ main {
   padding: 5.5rem 0;
 }
 
+/* 🔥 FIX: reduced top padding so the hero doesn't get pushed too far down after the taller header fix */
 .hero {
-  padding-top: 4.5rem;
+  padding-top: 2rem;
 }
 
 .hero-grid,
@@ -808,7 +815,8 @@ body.dark .contact-form textarea:focus {
     border-radius: 20px;
   }
 
+  /* 🔥 FIX: mobile logo stays large, but is capped lower so it doesn't dominate the whole viewport */
   .brand-logo {
-    height: clamp(90px, 20vw, 140px);
+    height: clamp(70px, 18vw, 120px);
   }
 }
