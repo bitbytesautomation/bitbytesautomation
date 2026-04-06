@@ -146,18 +146,19 @@ body.dark .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 0;
-  gap: 1rem;
+  padding: 1.55rem 0;
+  gap: 1.25rem;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .brand-logo {
-  height: clamp(54px, 8vw, 96px);
+  height: clamp(120px, 18vw, 220px);
   width: auto;
   object-fit: contain;
   animation: logoEntrance 0.8s ease both;
@@ -166,12 +167,12 @@ body.dark .site-header {
 }
 
 .brand:hover .brand-logo {
-  transform: translateY(-1px) scale(1.05);
-  filter: drop-shadow(0 0 12px rgba(49, 94, 251, 0.45)) drop-shadow(0 0 28px rgba(74, 134, 255, 0.25));
+  transform: translateY(-1px) scale(1.03);
+  filter: drop-shadow(0 0 14px rgba(49, 94, 251, 0.42)) drop-shadow(0 0 34px rgba(74, 134, 255, 0.26));
 }
 
 body.dark .brand:hover .brand-logo {
-  filter: drop-shadow(0 0 16px rgba(110, 151, 255, 0.6)) drop-shadow(0 0 36px rgba(128, 179, 255, 0.35));
+  filter: drop-shadow(0 0 16px rgba(110, 151, 255, 0.55)) drop-shadow(0 0 38px rgba(128, 179, 255, 0.32));
 }
 
 @keyframes logoEntrance {
@@ -290,7 +291,7 @@ main {
 .page-hero h1,
 .video-intro h2,
 .services h2,
-.process h2,
+process h2,
 .cta-band h2 {
   font-size: clamp(2.35rem, 5vw, 4.6rem);
   line-height: 0.98;
@@ -808,6 +809,6 @@ body.dark .contact-form textarea:focus {
   }
 
   .brand-logo {
-    height: clamp(44px, 10vw, 72px);
+    height: clamp(90px, 20vw, 140px);
   }
 }
