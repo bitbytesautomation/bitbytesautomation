@@ -43,7 +43,8 @@
         <div class="detail-card">
           <h2>Business onboarding form</h2>
 
-          <form class="contact-form" id="onboardingForm" data-inline-handled="true">
+          <form class="contact-form" id="onboardingForm">
+
             <label>
               Client ID
               <input type="text" name="client_id" placeholder="BB-CLIENT-001" />
@@ -51,42 +52,42 @@
 
             <label>
               Business Name
-              <input type="text" name="business_name" placeholder="Your business name" required />
+              <input type="text" name="business_name" required />
             </label>
 
             <label>
               Contact Name
-              <input type="text" name="contact_name" placeholder="Your full name" required />
+              <input type="text" name="contact_name" required />
             </label>
 
             <label>
               Contact Email
-              <input type="email" name="contact_email" placeholder="you@example.com" required />
+              <input type="email" name="contact_email" required />
             </label>
 
             <label>
               Contact Phone
-              <input type="tel" name="contact_phone" placeholder="Best phone number" />
+              <input type="tel" name="contact_phone" />
             </label>
 
             <label>
               Services Offered
-              <textarea name="services_offered" rows="5" placeholder="List your services, pricing basics, or what you want leads for." required></textarea>
+              <textarea name="services_offered" rows="5" required></textarea>
             </label>
 
             <label>
               Service Areas
-              <input type="text" name="service_areas" placeholder="Cities or areas you serve" />
+              <input type="text" name="service_areas" />
             </label>
 
             <label>
               Business Hours
-              <input type="text" name="business_hours" placeholder="Mon-Fri 8am-6pm" />
+              <input type="text" name="business_hours" />
             </label>
 
             <label>
               Website URL
-              <input type="url" name="website_url" placeholder="https://yourwebsite.com" />
+              <input type="url" name="website_url" />
             </label>
 
             <label>
@@ -101,37 +102,37 @@
 
             <label>
               Notification Email
-              <input type="email" name="notification_email" placeholder="Email for lead notifications" />
+              <input type="email" name="notification_email" />
             </label>
 
             <label>
               Notification Phone
-              <input type="tel" name="notification_phone" placeholder="Phone for lead notifications" />
+              <input type="tel" name="notification_phone" />
             </label>
 
             <label>
               Logo Link
-              <input type="url" name="logo_link" placeholder="Link to your logo file" />
+              <input type="url" name="logo_link" />
             </label>
 
             <label>
               Photo Link
-              <input type="url" name="photo_link" placeholder="Link to photos, Drive folder, or image folder" />
+              <input type="url" name="photo_link" />
             </label>
 
             <label>
               Social Links
-              <textarea name="social_links" rows="4" placeholder="Paste your Facebook, Instagram, TikTok, etc."></textarea>
+              <textarea name="social_links" rows="4"></textarea>
             </label>
 
             <label>
               Tone / Style
-              <input type="text" name="tone_style" placeholder="Professional, friendly, bold, luxury, modern, etc." />
+              <input type="text" name="tone_style" />
             </label>
 
             <label>
               Extra Notes
-              <textarea name="extra_notes" rows="6" placeholder="Anything else we should know before building your setup?"></textarea>
+              <textarea name="extra_notes" rows="6"></textarea>
             </label>
 
             <button class="btn btn-primary" type="submit">
@@ -144,15 +145,11 @@
 
         <div class="detail-card">
           <h2>What happens next</h2>
-          <p>Once this is submitted, we review your info, organize your assets, and begin your setup.</p>
-          <p><strong>Best results:</strong> include real service info, real contact details, and working file links for logos or photos.</p>
+          <p>Once this is submitted, we review your info and begin your setup.</p>
 
           <div class="note-box">
-            <strong>Heads up:</strong>
-            <p>
-              Submission Date is created automatically inside your sheet through Make,
-              so it does not need its own form field here.
-            </p>
+            <strong>Tip:</strong>
+            <p>More details = faster launch.</p>
           </div>
         </div>
       </div>
@@ -174,34 +171,33 @@
   <script>
     const onboardingForm = document.getElementById('onboardingForm');
 
-    if (onboardingForm) {
-      onboardingForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    onboardingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        const button = onboardingForm.querySelector('button');
-        const status = onboardingForm.querySelector('.form-status');
+      const button = onboardingForm.querySelector('button');
+      const status = onboardingForm.querySelector('.form-status');
 
-        button.innerText = 'Submitting...';
-        button.disabled = true;
-        status.textContent = 'Sending your onboarding details...';
+      button.innerText = "Submitting...";
+      button.disabled = true;
+      status.textContent = "Sending your onboarding details...";
 
-        const formData = new FormData(onboardingForm);
+      const formData = new FormData(onboardingForm);
 
-        try {
-          await fetch('YOUR_ONBOARDING_MAKE_WEBHOOK_URL', {
-            method: 'POST',
-            body: formData
-          });
+      try {
+        await fetch("https://hook.us2.make.com/jht32w8hdv5sm11or9s94k21t6pcnu4g", {
+          method: "POST",
+          body: formData
+        });
 
-          window.location.href = 'onboarding-thank-you.html';
-        } catch (error) {
-          console.error(error);
-          status.textContent = 'Something went wrong. Please try again.';
-          button.innerText = 'Submit Onboarding';
-          button.disabled = false;
-        }
-      });
-    }
+        window.location.href = "onboarding-thank-you.html";
+
+      } catch (error) {
+        console.error(error);
+        status.textContent = "Something went wrong. Please try again.";
+        button.innerText = "Submit Onboarding";
+        button.disabled = false;
+      }
+    });
   </script>
 
   <script src="assets/js/script.js"></script>
