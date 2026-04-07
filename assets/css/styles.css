@@ -1,11 +1,11 @@
 :root {
   --bg: #0d1424;
   --bg-2: #131d33;
-  --surface: rgba(21, 31, 52, 0.74);
-  --surface-strong: rgba(21, 31, 52, 0.92);
+  --surface: rgba(18, 28, 48, 0.84);
+  --surface-strong: rgba(18, 28, 48, 0.94);
   --surface-solid: #17233c;
   --text: #eef4ff;
-  --muted: #a8b5cc;
+  --muted: #c3d0e6;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.14);
   --accent: #6e97ff;
@@ -559,31 +559,47 @@ main {
   display: grid;
   gap: 0.45rem;
   font-weight: 700;
+  color: #f3f7ff;
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 1rem 1rem;
   border-radius: 16px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(9, 16, 31, 0.96);
   font: inherit;
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  color: #f8fbff;
+  caret-color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(226, 236, 255, 0.65);
+}
+
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 
 .contact-form textarea {
   resize: vertical;
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   outline: none;
-  border-color: rgba(49, 94, 251, 0.38);
-  box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.08);
-  background: #ffffff;
+  border-color: rgba(110, 151, 255, 0.72);
+  box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.12);
+  background: rgba(11, 19, 37, 1);
+  color: #ffffff;
 }
 
 
@@ -592,6 +608,46 @@ main {
   margin: 0.25rem 0 0;
   color: var(--muted);
   font-weight: 600;
+}
+
+
+/* ===== readability upgrades site-wide ===== */
+.services p,
+.process p,
+.page-hero p,
+.video-intro p,
+.hero-text,
+.detail-list,
+.quote-card p,
+.metric-box p,
+.site-footer p,
+.site-footer a {
+  color: var(--muted);
+}
+
+.detail-card,
+.info-card,
+.quote-card,
+.step,
+.note-box,
+.dashboard-card,
+.video-frame {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.detail-card h2,
+.info-card h3,
+.step h3,
+.quote-card strong,
+.metric-box strong,
+.metric-label,
+.contact-form label,
+.page-hero h1,
+.services h2,
+.process h2,
+.video-intro h2,
+.cta-band h2 {
+  color: #f8fbff;
 }
 
 .page-main .page-hero {
