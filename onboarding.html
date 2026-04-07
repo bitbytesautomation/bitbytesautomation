@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Onboarding | BitBytes Automation</title>
-  <meta name="description" content="Complete your onboarding so BitBytes can set up your lead system." />
+  <meta name="description" content="Complete your BitBytes onboarding so we can build and connect your lead system." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
@@ -19,6 +20,8 @@
 
       <nav class="nav">
         <a href="index.html">Home</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="case-study.html">How It Works</a>
         <a href="pricing.html">Pricing</a>
         <a href="contact.html">Contact</a>
         <a href="onboarding.html" class="active nav-cta">Onboarding</a>
@@ -31,16 +34,16 @@
       <div class="container narrow">
         <p class="eyebrow">Client Onboarding</p>
         <h1>Let’s get your system set up.</h1>
-        <p>Fill this out so we can build your website, connect your automation, and route your leads properly.</p>
+        <p>Fill this out so we can build your setup, connect your automation, and route your leads correctly.</p>
       </div>
     </section>
 
     <section class="services">
       <div class="container contact-layout">
         <div class="detail-card">
-          <h2>Business details</h2>
+          <h2>Business onboarding form</h2>
 
-          <form class="contact-form" id="onboardingForm">
+          <form class="contact-form" id="onboardingForm" data-inline-handled="true">
             <label>
               Client ID
               <input type="text" name="client_id" placeholder="BB-CLIENT-001" />
@@ -63,17 +66,17 @@
 
             <label>
               Contact Phone
-              <input type="tel" name="contact_phone" placeholder="Best number to reach you" />
+              <input type="tel" name="contact_phone" placeholder="Best phone number" />
             </label>
 
             <label>
               Services Offered
-              <textarea name="services_offered" rows="4" placeholder="List the services you offer" required></textarea>
+              <textarea name="services_offered" rows="5" placeholder="List your services, pricing basics, or what you want leads for." required></textarea>
             </label>
 
             <label>
               Service Areas
-              <input type="text" name="service_areas" placeholder="Cities / areas you serve" />
+              <input type="text" name="service_areas" placeholder="Cities or areas you serve" />
             </label>
 
             <label>
@@ -98,12 +101,12 @@
 
             <label>
               Notification Email
-              <input type="email" name="notification_email" placeholder="Where lead alerts should go" />
+              <input type="email" name="notification_email" placeholder="Email for lead notifications" />
             </label>
 
             <label>
               Notification Phone
-              <input type="tel" name="notification_phone" placeholder="Where text alerts should go" />
+              <input type="tel" name="notification_phone" placeholder="Phone for lead notifications" />
             </label>
 
             <label>
@@ -113,41 +116,43 @@
 
             <label>
               Photo Link
-              <input type="url" name="photo_link" placeholder="Link to your photos folder or file" />
+              <input type="url" name="photo_link" placeholder="Link to photos, Drive folder, or image folder" />
             </label>
 
             <label>
               Social Links
-              <textarea name="social_links" rows="3" placeholder="Paste your Facebook, Instagram, etc."></textarea>
+              <textarea name="social_links" rows="4" placeholder="Paste your Facebook, Instagram, TikTok, etc."></textarea>
             </label>
 
             <label>
               Tone / Style
-              <input type="text" name="tone_style" placeholder="Professional, friendly, aggressive sales, etc." />
-            </label>
-
-            <label>
-              Competitors They Like
-              <textarea name="competitors" rows="3" placeholder="Any businesses or websites you like?"></textarea>
+              <input type="text" name="tone_style" placeholder="Professional, friendly, bold, luxury, modern, etc." />
             </label>
 
             <label>
               Extra Notes
-              <textarea name="extra_notes" rows="5" placeholder="Anything else we should know before building?"></textarea>
+              <textarea name="extra_notes" rows="6" placeholder="Anything else we should know before building your setup?"></textarea>
             </label>
 
-            <button class="btn btn-primary" type="submit">Submit Onboarding</button>
+            <button class="btn btn-primary" type="submit">
+              Submit Onboarding
+            </button>
+
             <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
 
         <div class="detail-card">
           <h2>What happens next</h2>
-          <p>After you submit this form, we’ll review your info, begin setup, and contact you if we need anything else.</p>
+          <p>Once this is submitted, we review your info, organize your assets, and begin your setup.</p>
+          <p><strong>Best results:</strong> include real service info, real contact details, and working file links for logos or photos.</p>
 
           <div class="note-box">
-            <strong>Tip:</strong>
-            <p>The more complete your answers are, the faster we can launch your setup.</p>
+            <strong>Heads up:</strong>
+            <p>
+              Submission Date is created automatically inside your sheet through Make,
+              so it does not need its own form field here.
+            </p>
           </div>
         </div>
       </div>
@@ -176,22 +181,23 @@
         const button = onboardingForm.querySelector('button');
         const status = onboardingForm.querySelector('.form-status');
 
-        button.innerText = "Submitting...";
+        button.innerText = 'Submitting...';
         button.disabled = true;
-        status.textContent = "Sending your onboarding details...";
+        status.textContent = 'Sending your onboarding details...';
 
         const formData = new FormData(onboardingForm);
 
         try {
-          await fetch("YOUR_ONBOARDING_MAKE_WEBHOOK_HERE", {
-            method: "POST",
+          await fetch('YOUR_ONBOARDING_MAKE_WEBHOOK_URL', {
+            method: 'POST',
             body: formData
           });
 
-          window.location.href = "onboarding-thank-you.html";
+          window.location.href = 'onboarding-thank-you.html';
         } catch (error) {
-          status.textContent = "Something went wrong. Please try again.";
-          button.innerText = "Submit Onboarding";
+          console.error(error);
+          status.textContent = 'Something went wrong. Please try again.';
+          button.innerText = 'Submit Onboarding';
           button.disabled = false;
         }
       });
