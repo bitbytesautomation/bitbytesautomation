@@ -91,14 +91,14 @@ button, input { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 124px;
+  min-height: 82px;
   padding: 1rem 0;
   gap: 1.25rem;
 }
 
 .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
 .brand-logo {
-  height: clamp(84px, 12vw, 150px);
+  height: clamp(52px, 7vw, 84px);
   width: auto;
   object-fit: contain;
   transition: transform 0.25s ease, filter 0.25s ease;
@@ -133,7 +133,7 @@ button, input { font: inherit; }
   box-shadow: var(--shadow-sm);
 }
 
-.admin-main { padding: 2rem 0 4.5rem; }
+.admin-main { padding: 0.75rem 0 3rem; }
 
 .admin-grid,
 .launcher-wrap {
@@ -144,7 +144,7 @@ button, input { font: inherit; }
 }
 
 .admin-hero,
-.dashboard-section { padding: 1rem 0 2rem; }
+.dashboard-section { padding: 0.4rem 0 1.5rem; }
 
 .eyebrow,
 .section-tag {
@@ -157,15 +157,15 @@ button, input { font: inherit; }
   border-radius: 999px;
   padding: 0.5rem 0.85rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
 }
 
 .hero-copy h1,
 .dashboard-head h1 {
-  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
-  margin: 0 0 1rem;
+  margin: 0 0 0.55rem;
   color: var(--text-strong);
 }
 
@@ -296,7 +296,7 @@ button, input { font: inherit; }
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .kpi-grid {
   display: grid;
@@ -385,6 +385,29 @@ button, input { font: inherit; }
 
 .hidden { display: none !important; }
 
+
+.compact-dashboard-section {
+  padding-top: 0.15rem;
+}
+
+.compact-dashboard-head {
+  align-items: center;
+}
+
+.compact-title {
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  line-height: 1.02;
+  margin-bottom: 0.45rem;
+}
+
+.dashboard-sub {
+  max-width: 42rem;
+  margin: 0;
+}
+
+.kpi-grid {
+  margin-top: 0.35rem;
+}
 @media (max-width: 980px) {
   .admin-grid,
   .launcher-wrap,
