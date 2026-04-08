@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheets Control Center | BitBytes Automation</title>
+  <meta name="description" content="Private BitBytes Automation sheets launcher." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin-theme.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin</a>
+        <a href="sheets.html" class="active nav-cta">Sheets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="dashboard-head">
+          <div>
+            <p class="eyebrow">Backend Access</p>
+            <h1>Sheets control center</h1>
+            <p class="dashboard-sub">
+              Open the private Google Sheets you use to run BitBytes operations.
+            </p>
+          </div>
+
+          <div class="dashboard-actions">
+            <button class="btn btn-secondary" id="logoutBtn" type="button">Log Out</button>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-label">Tracked Sheets</span>
+            <strong id="sheetCount">6</strong>
+            <p>Core backend workspaces connected to this launcher.</p>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Access Type</span>
+            <strong>Private links</strong>
+            <p>No on-page embeds. Opens each sheet directly in Google Sheets.</p>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Usage</span>
+            <strong>Ops dashboard</strong>
+            <p>Fast access for client tracking, payments, and fulfillment work.</p>
+          </div>
+        </div>
+
+        <div class="launcher-wrap">
+          <aside class="sheet-sidebar">
+            <div class="sidebar-card">
+              <p class="section-tag">Quick Filter</p>
+              <label class="search-label" for="sheetSearch">Find a sheet</label>
+              <input type="search" id="sheetSearch" class="search-input" placeholder="Search sheet name..." />
+            </div>
+
+            <div class="sidebar-card">
+              <p class="section-tag">Navigation</p>
+              <div class="sheet-nav" id="sheetNav"></div>
+            </div>
+          </aside>
+
+          <section class="sheet-stage">
+            <div class="stage-card">
+              <p class="section-tag">Selected Sheet</p>
+              <h2 id="sheetTitle">BitBytes - Client Tracker</h2>
+              <p id="sheetDescription" class="stage-copy">
+                Launch the selected sheet in Google Sheets.
+              </p>
+
+              <div class="stage-actions">
+                <a id="openSheetBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open Sheet</a>
+              </div>
+            </div>
+
+            <div class="cards-grid" id="sheetCards"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin-auth.js"></script>
+  <script src="assets/js/sheets-launcher.js"></script>
+</body>
+</html>

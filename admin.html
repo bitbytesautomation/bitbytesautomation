@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | BitBytes Automation</title>
+  <meta name="description" content="Private BitBytes Automation admin login." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin-theme.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="admin.html" class="active nav-cta">Admin</a>
+        <a href="sheets.html">Sheets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-hero">
+      <div class="container admin-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Private Access</p>
+          <h1>BitBytes backend admin portal.</h1>
+          <p class="hero-text">
+            Use your admin credentials to access the internal sheets control center.
+            This area is meant for backend operations only.
+          </p>
+
+          <div class="hero-points">
+            <div class="hero-point-card">
+              <strong>One place for ops</strong>
+              <span>Quick access to client, lead, fulfillment, onboarding, payments, and rep tracking.</span>
+            </div>
+            <div class="hero-point-card">
+              <strong>Simple setup</strong>
+              <span>No embeds. No public sheet view. Just secure launcher-style access.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="panel-card">
+            <p class="section-tag">Admin Login</p>
+            <h2>Enter credentials</h2>
+
+            <form id="adminLoginForm" class="admin-form" autocomplete="off">
+              <label>
+                Username
+                <input type="text" id="username" name="username" placeholder="Enter username" required />
+              </label>
+
+              <label>
+                Password
+                <input type="password" id="password" name="password" placeholder="Enter password" required />
+              </label>
+
+              <button class="btn btn-primary" type="submit">Enter Admin Portal</button>
+              <p class="form-status" id="loginStatus" aria-live="polite"></p>
+            </form>
+
+            <div class="admin-note">
+              <strong>Access note:</strong>
+              <p>This page uses a front-end gate for convenience on your current static site setup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin-auth.js"></script>
+</body>
+</html>
