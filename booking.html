@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | BitBytes Automation</title>
+  <meta name="description" content="Universal BitBytes booking form that changes per client and can be embedded or used as a standalone booking link." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="BitBytes Automation home">
+        <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="case-study.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="booking.html" class="active">Booking Demo</a>
+        <a href="contact.html" class="nav-cta">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow" data-booking-accent>Universal booking flow</p>
+        <h1 data-booking-hero-title>Book your appointment online</h1>
+        <p data-booking-hero-copy>
+          Fill out the form below and this business can receive the request, trigger follow-up, and manage next steps from one system.
+        </p>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container contact-layout">
+        <div class="detail-card">
+          <h2><span data-booking-business>Demo Glow Studio</span> booking form</h2>
+          <p class="mini-note">Client ID: <span data-booking-client-id>bb-demo-spa</span></p>
+
+          <form class="contact-form" id="bookingForm" data-webhook-key="booking" data-redirect="booking-thank-you.html">
+            <input type="hidden" name="client_id" value="bb-demo-spa" />
+            <input type="hidden" name="source" value="website_booking_form" />
+
+            <div class="form-section">
+              <h3>Service selection</h3>
+              <div class="service-choice-grid" data-booking-services></div>
+            </div>
+
+            <div class="form-section">
+              <h3>Your details</h3>
+              <div class="form-grid">
+                <label>
+                  Customer name <span class="required-star">*</span>
+                  <input type="text" name="customer_name" required />
+                </label>
+
+                <label data-customer-email-label>
+                  Customer email <span class="required-star">*</span>
+                  <input type="email" name="customer_email" required />
+                </label>
+              </div>
+
+              <div class="form-grid">
+                <label data-customer-phone-label>
+                  Customer phone <span class="required-star">*</span>
+                  <input type="tel" name="customer_phone" required />
+                </label>
+
+                <label>
+                  Preferred contact method <span class="required-star">*</span>
+                  <select name="preferred_contact_method" required>
+                    <option value="">Select one</option>
+                    <option value="text">Text</option>
+                    <option value="email">Email</option>
+                    <option value="phone_call">Phone call</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Appointment details</h3>
+              <div class="form-grid" data-booking-intake></div>
+            </div>
+
+            <div class="form-section">
+              <h3>Final details</h3>
+              <label>
+                Additional notes
+                <textarea name="additional_notes" rows="4" placeholder="Anything else the business should know before confirming?"></textarea>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" name="consent_to_contact" value="yes" required />
+                <span>I agree to be contacted about this booking request.</span>
+              </label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit booking request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="detail-card">
+          <h2>What changes per client</h2>
+          <ul class="detail-list">
+            <li>Business: <span data-booking-business>Demo Glow Studio</span></li>
+            <li>Category: <span data-booking-category>Med spa</span></li>
+            <li>Hours: <span data-booking-hours>Mon-Fri 9am-6pm</span></li>
+            <li>Service area: <span data-booking-areas>Menlo Park, Palo Alto, Redwood City</span></li>
+            <li>Reminder timing: <span data-booking-reminders>24 hours before</span></li>
+            <li>Preferred follow-up method: <span data-booking-contact-method>email and text</span></li>
+          </ul>
+
+          <div class="callout">
+            <strong>How this is meant to work</strong>
+            <span data-booking-confirmation-copy>
+              We usually confirm bookings within business hours. You will receive follow-up based on the business rules saved for this client.
+            </span>
+          </div>
+
+          <div class="form-section">
+            <h3>Demo client links</h3>
+            <div class="badge-row">
+              <a class="btn btn-secondary" href="booking.html?client=bb-demo-spa">Spa demo</a>
+              <a class="btn btn-secondary" href="booking.html?client=bb-demo-barber">Barber demo</a>
+              <a class="btn btn-secondary" href="booking.html?client=bb-demo-detail">Detailer demo</a>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Embed code example</h3>
+            <div class="embed-box">
+              <pre class="code-block" data-embed-code></pre>
+            </div>
+            <p class="mini-note">Clients can embed this on their site or use the direct link in bios, DMs, texts, and ads.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>BitBytes</strong><span class="footer-sub">automation</span>
+        <p>Embeddable booking and follow-up systems for service businesses.</p>
+      </div>
+      <div>
+        <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
