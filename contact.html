@@ -3,90 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | BitBytes Automation</title>
-  <meta name="description" content="Contact BitBytes Automation to set up a faster, simpler lead response system for your business." />
+  <title>Book a Demo | BitBytes Automation</title>
+  <meta name="description" content="Request a demo of the BitBytes embedded booking and follow-up system." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="BitBytes Automation home">
         <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
       </a>
-
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="testimonials.html">Testimonials</a>
         <a href="case-study.html">How It Works</a>
         <a href="pricing.html">Pricing</a>
-        <a href="contact.html" class="active nav-cta">Contact</a>
-</nav>
+        <a href="testimonials.html">Use Cases</a>
+        <a href="contact.html" class="active nav-cta">Book a Demo</a>
+      </nav>
     </div>
   </header>
 
   <main class="page-main">
     <section class="page-hero">
       <div class="container narrow">
-        <p class="eyebrow">Contact</p>
-        <h1>Want faster replies and better follow-up for your leads?</h1>
-        <p>Send a message below. This page also acts as a live example of how the system responds.</p>
+        <p class="eyebrow">Book a demo</p>
+        <h1>See how the booking system would work for your business.</h1>
+        <p>
+          Use this page to capture warm leads. Ask enough questions to qualify them, then move serious businesses into payment and onboarding.
+        </p>
       </div>
     </section>
 
     <section class="services">
       <div class="container contact-layout">
         <div class="detail-card">
-          <h2>Send a message</h2>
+          <h2>Demo request form</h2>
+          <form class="contact-form" id="contactForm" data-webhook-key="contact" data-redirect="thank-you.html">
+            <div class="form-grid">
+              <label>
+                Full name <span class="required-star">*</span>
+                <input type="text" name="name" placeholder="Your full name" required />
+              </label>
+              <label>
+                Business name <span class="required-star">*</span>
+                <input type="text" name="business" placeholder="Your business name" required />
+              </label>
+            </div>
 
-          <form class="contact-form" id="contactForm" data-inline-handled="true">
+            <div class="form-grid">
+              <label>
+                Email <span class="required-star">*</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" placeholder="Best phone number" />
+              </label>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                Industry
+                <select name="industry">
+                  <option value="">Select one</option>
+                  <option>Med Spa</option>
+                  <option>Salon / Barber</option>
+                  <option>Tattoo</option>
+                  <option>Dental / Clinic</option>
+                  <option>Detailing / Auto</option>
+                  <option>Gym / Coaching</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Current booking method
+                <input type="text" name="current_booking_method" placeholder="Website form, DMs, Calendly, text, etc." />
+              </label>
+            </div>
+
             <label>
-              Full Name
-              <input type="text" name="name" placeholder="Your full name" required />
+              What would you want this system to handle?
+              <textarea name="message" rows="6" placeholder="Example: booking requests, reminders, follow-up, intake questions, service selection, customer updates."></textarea>
             </label>
 
-            <label>
-              Business Name
-              <input type="text" name="business" placeholder="Your business name" />
-            </label>
-
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" required />
-            </label>
-
-            <label>
-              Phone
-              <input type="tel" name="phone" placeholder="Your phone number" />
-            </label>
-
-            <label>
-              Message
-              <textarea name="message" rows="6" placeholder="Tell me what kind of leads you want help with."></textarea>
-            </label>
-
-            <button class="btn btn-primary" type="submit">
-              Send Message
-            </button>
-
+            <button class="btn btn-primary" type="submit">Request demo</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
 
         <div class="detail-card">
-          <h2>Direct contact</h2>
-          <p><strong>Email:</strong> <a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
-          <p><strong>Good for:</strong> demo requests, referrals, and business owners who want a better lead process.</p>
+          <h2>What happens after this form</h2>
+          <ul class="detail-list">
+            <li>You review whether the business is a fit for the booking system.</li>
+            <li>You send them to the pricing page if they are ready.</li>
+            <li>After payment, they complete onboarding so you can configure their booking flow.</li>
+          </ul>
 
-          <div class="note-box">
-            <strong>Live demo:</strong>
-            <p>
-              Submit this form and you’ll see how fast the response system works.
-              This is the same kind of setup we build for clients.
-            </p>
+          <div class="callout">
+            <strong>Good sales angle</strong>
+            Position this as replacing scattered booking methods with one clean booking flow that can live on their site and socials.
+          </div>
+
+          <div class="note-box" style="margin-top:1rem;">
+            <strong>Direct contact</strong>
+            <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
+            <p class="mini-note">Use this for referral partners, warm leads, and manual demo scheduling.</p>
           </div>
         </div>
       </div>
@@ -97,7 +121,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>BitBytes</strong><span class="footer-sub">automation</span>
-        <p>Lead follow-up systems for growing businesses.</p>
+        <p>Embeddable booking and follow-up systems for service businesses.</p>
       </div>
       <div>
         <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
@@ -105,38 +129,7 @@
     </div>
   </footer>
 
-  <script>
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const button = contactForm.querySelector('button');
-        const status = contactForm.querySelector('.form-status');
-
-        button.innerText = "Sending...";
-        button.disabled = true;
-        status.textContent = "Sending your message...";
-
-        const formData = new FormData(contactForm);
-
-        try {
-          await fetch("https://hook.us2.make.com/t4xvitutoqatbmic4ubmklgykotide6e", {
-            method: "POST",
-            body: formData
-          });
-
-          window.location.href = "thank-you.html";
-        } catch (error) {
-          status.textContent = "Something went wrong. Please try again.";
-          button.innerText = "Send Message";
-          button.disabled = false;
-        }
-      });
-    }
-  </script>
-
+  <script src="assets/js/site-config.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
