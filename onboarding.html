@@ -3,27 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onboarding | BitBytes Automation</title>
-  <meta name="description" content="Complete your BitBytes onboarding so we can build and connect your lead system." />
+  <title>Client Onboarding | BitBytes Automation</title>
+  <meta name="description" content="BitBytes client onboarding form for the embedded booking and follow-up system." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="BitBytes Automation home">
         <img src="assets/images/logo.png" alt="BitBytes Automation logo" class="brand-logo" />
       </a>
-
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="testimonials.html">Testimonials</a>
         <a href="case-study.html">How It Works</a>
         <a href="pricing.html">Pricing</a>
-        <a href="contact.html">Contact</a>
+        <a href="testimonials.html">Use Cases</a>
         <a href="onboarding.html" class="active nav-cta">Onboarding</a>
       </nav>
     </div>
@@ -32,124 +29,226 @@
   <main class="page-main">
     <section class="page-hero">
       <div class="container narrow">
-        <p class="eyebrow">Client Onboarding</p>
-        <h1>Let’s get your system set up.</h1>
-        <p>Fill this out so we can build your setup, connect your automation, and route your leads correctly.</p>
+        <p class="eyebrow">Client onboarding</p>
+        <h1>Collect everything needed to configure the client’s booking system.</h1>
+        <p>
+          This form is built around the easier BitBytes model: one universal booking engine that changes behavior based on the business’s own service,
+          intake, follow-up, and notification preferences.
+        </p>
       </div>
     </section>
 
     <section class="services">
       <div class="container contact-layout">
         <div class="detail-card">
-          <h2>Business onboarding form</h2>
+          <h2>Business setup form</h2>
 
-          <form class="contact-form" id="onboardingForm">
+          <form class="contact-form" id="onboardingForm" data-webhook-key="onboarding" data-redirect="onboarding-thank-you.html">
 
-            <label>
-              Client ID
-              <input type="text" name="client_id" placeholder="BB-CLIENT-001" />
-            </label>
+            <div class="form-section">
+              <h3>Business profile</h3>
+              <div class="form-grid">
+                <label>
+                  Client ID
+                  <input type="text" name="client_id" placeholder="Auto-generated if left blank" />
+                  <span class="field-note">Use this as the unique key for the client configuration.</span>
+                </label>
 
-            <label>
-              Business Name
-              <input type="text" name="business_name" required />
-            </label>
+                <label>
+                  Business name <span class="required-star">*</span>
+                  <input type="text" name="business_name" placeholder="Business name" required />
+                </label>
+              </div>
 
-            <label>
-              Contact Name
-              <input type="text" name="contact_name" required />
-            </label>
+              <div class="form-grid">
+                <label>
+                  Contact name <span class="required-star">*</span>
+                  <input type="text" name="contact_name" required />
+                </label>
 
-            <label>
-              Contact Email
-              <input type="email" name="contact_email" required />
-            </label>
+                <label>
+                  Contact email <span class="required-star">*</span>
+                  <input type="email" name="contact_email" required />
+                </label>
+              </div>
 
-            <label>
-              Contact Phone
-              <input type="tel" name="contact_phone" />
-            </label>
+              <div class="form-grid">
+                <label>
+                  Contact phone
+                  <input type="tel" name="contact_phone" />
+                </label>
 
-            <label>
-              Services Offered
-              <textarea name="services_offered" rows="5" required></textarea>
-            </label>
+                <label>
+                  Website URL
+                  <input type="url" name="website_url" placeholder="https://example.com" />
+                </label>
+              </div>
+            </div>
 
-            <label>
-              Service Areas
-              <input type="text" name="service_areas" />
-            </label>
+            <div class="form-section">
+              <h3>Services and scheduling</h3>
+              <label>
+                Services offered <span class="required-star">*</span>
+                <textarea name="services_offered" rows="5" required placeholder="List the main services customers can book."></textarea>
+              </label>
 
-            <label>
-              Business Hours
-              <input type="text" name="business_hours" />
-            </label>
+              <div class="form-grid">
+                <label>
+                  Business hours
+                  <input type="text" name="business_hours" placeholder="Mon-Fri 9am-6pm, Sat 10am-4pm" />
+                </label>
 
-            <label>
-              Website URL
-              <input type="url" name="website_url" />
-            </label>
+                <label>
+                  Service area or locations
+                  <input type="text" name="service_areas" placeholder="City names, neighborhoods, or locations served" />
+                </label>
+              </div>
 
-            <label>
-              Preferred Lead Delivery
-              <select name="preferred_lead_delivery" required>
-                <option value="">Select one</option>
-                <option value="Call">Call</option>
-                <option value="Text">Text</option>
-                <option value="Email">Email</option>
-              </select>
-            </label>
+              <div class="form-grid">
+                <label>
+                  Appointment length options
+                  <input type="text" name="appointment_lengths" placeholder="30 min, 60 min, 90 min" />
+                </label>
 
-            <label>
-              Notification Email
-              <input type="email" name="notification_email" />
-            </label>
+                <label>
+                  Booking approval style
+                  <select name="booking_approval_style">
+                    <option value="">Select one</option>
+                    <option value="auto_confirm">Auto confirm</option>
+                    <option value="manual_review">Manual review before confirming</option>
+                    <option value="calendar_based">Based on calendar availability</option>
+                  </select>
+                </label>
+              </div>
+            </div>
 
-            <label>
-              Notification Phone
-              <input type="tel" name="notification_phone" />
-            </label>
+            <div class="form-section">
+              <h3>Customer intake form</h3>
+              <label>
+                Intake questions customers should answer
+                <textarea name="intake_questions" rows="5" placeholder="Examples: preferred date, preferred service, notes, skin concerns, vehicle type, special requests."></textarea>
+              </label>
 
-            <label>
-              Logo Link
-              <input type="url" name="logo_link" />
-            </label>
+              <div class="form-grid">
+                <label>
+                  Require phone number from customer?
+                  <select name="require_customer_phone">
+                    <option value="">Select one</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </label>
 
-            <label>
-              Photo Link
-              <input type="url" name="photo_link" />
-            </label>
+                <label>
+                  Require email from customer?
+                  <select name="require_customer_email">
+                    <option value="">Select one</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </label>
+              </div>
+            </div>
 
-            <label>
-              Social Links
-              <textarea name="social_links" rows="4"></textarea>
-            </label>
+            <div class="form-section">
+              <h3>Follow-up and notifications</h3>
+              <div class="form-grid">
+                <label>
+                  Confirmation method
+                  <select name="confirmation_method">
+                    <option value="">Select one</option>
+                    <option value="email">Email</option>
+                    <option value="text">Text</option>
+                    <option value="both">Both</option>
+                  </select>
+                </label>
 
-            <label>
-              Tone / Style
-              <input type="text" name="tone_style" />
-            </label>
+                <label>
+                  Reminder timing
+                  <input type="text" name="reminder_timing" placeholder="24 hours before, 2 hours before, etc." />
+                </label>
+              </div>
 
-            <label>
-              Extra Notes
-              <textarea name="extra_notes" rows="6"></textarea>
-            </label>
+              <div class="form-grid">
+                <label>
+                  Business notification email
+                  <input type="email" name="notification_email" placeholder="Where booking alerts should go" />
+                </label>
 
-            <button class="btn btn-primary" type="submit">
-              Submit Onboarding
-            </button>
+                <label>
+                  Business notification phone
+                  <input type="tel" name="notification_phone" placeholder="Optional SMS alert destination" />
+                </label>
+              </div>
 
+              <label>
+                Preferred follow-up rules
+                <textarea name="follow_up_rules" rows="5" placeholder="Example: if no reply after 2 hours, send reminder. If booking is approved, send confirmation + prep message."></textarea>
+              </label>
+            </div>
+
+            <div class="form-section">
+              <h3>Calendar and tool access</h3>
+              <div class="form-grid">
+                <label>
+                  Current calendar or scheduler
+                  <input type="text" name="current_calendar_system" placeholder="Google Calendar, Calendly, Square, none, etc." />
+                </label>
+
+                <label>
+                  Google account available for connection?
+                  <select name="google_account_available">
+                    <option value="">Select one</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="needs_help">Needs help setting it up</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Connection notes
+                <textarea name="connection_notes" rows="4" placeholder="Anything about calendar access, staff scheduling, or existing tools we should know."></textarea>
+              </label>
+            </div>
+
+            <div class="form-section">
+              <h3>Branding and extra rules</h3>
+              <div class="form-grid">
+                <label>
+                  Tone and style
+                  <input type="text" name="tone_style" placeholder="Luxury and friendly, clinical and short, casual, etc." />
+                </label>
+
+                <label>
+                  Social links
+                  <input type="text" name="social_links" placeholder="Instagram, Facebook, TikTok, etc." />
+                </label>
+              </div>
+
+              <label>
+                Extra notes
+                <textarea name="extra_notes" rows="5" placeholder="Anything the system should say, avoid saying, or treat as special handling."></textarea>
+              </label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit onboarding</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
 
         <div class="detail-card">
-          <h2>What happens next</h2>
-          <p>Once this is submitted, we review your info and begin your setup.</p>
+          <h2>What this form should power next</h2>
+          <ul class="detail-list">
+            <li>A client profile row in your master config sheet</li>
+            <li>A hosted booking page tied to that client ID</li>
+            <li>Notification rules for that specific business</li>
+            <li>Calendar routing and follow-up timing</li>
+          </ul>
 
-          <div class="note-box">
-            <strong>Tip:</strong>
-            <p>More details = faster launch.</p>
+          <div class="callout">
+            <strong>Best practice</strong>
+            Do not try to let AI invent the whole platform for each client. Use this form to fill templates and settings inside one universal system.
           </div>
         </div>
       </div>
@@ -160,7 +259,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>BitBytes</strong><span class="footer-sub">automation</span>
-        <p>Lead follow-up systems for growing businesses.</p>
+        <p>Embeddable booking and follow-up systems for service businesses.</p>
       </div>
       <div>
         <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
@@ -168,38 +267,7 @@
     </div>
   </footer>
 
-  <script>
-    const onboardingForm = document.getElementById('onboardingForm');
-
-    onboardingForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const button = onboardingForm.querySelector('button');
-      const status = onboardingForm.querySelector('.form-status');
-
-      button.innerText = "Submitting...";
-      button.disabled = true;
-      status.textContent = "Sending your onboarding details...";
-
-      const formData = new FormData(onboardingForm);
-
-      try {
-        await fetch("https://hook.us2.make.com/jht32w8hdv5sm11or9s94k21t6pcnu4g", {
-          method: "POST",
-          body: formData
-        });
-
-        window.location.href = "onboarding-thank-you.html";
-
-      } catch (error) {
-        console.error(error);
-        status.textContent = "Something went wrong. Please try again.";
-        button.innerText = "Submit Onboarding";
-        button.disabled = false;
-      }
-    });
-  </script>
-
+  <script src="assets/js/site-config.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
