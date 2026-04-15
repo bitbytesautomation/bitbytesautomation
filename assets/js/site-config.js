@@ -5,8 +5,8 @@ window.BITBYTES_CONFIG = {
   },
   stripe: {
     setupOneTime: "https://buy.stripe.com/cNi6oA8FddAD6LQgJg83C01",
-    monthly: "#ADD_MONTHLY_600_LINK",
-    sixMonth: "#ADD_6_MONTH_DISCOUNT_LINK",
-    twelveMonth: "#ADD_12_MONTH_DISCOUNT_LINK"
+    monthly: "https://buy.stripe.com/cNi6oA8FddAD6LQgJg83C01",
+    sixMonth: "https://buy.stripe.com/dRmfZabRpgMP6LQct083C02",
+    twelveMonth: "https://buy.stripe.com/cNi3co1cL68b8TYfFc83C03"
   }
 };
