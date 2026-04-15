@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How It Works | BitBytes Automation</title>
-  <meta name="description" content="See how BitBytes Automation helps businesses reply faster and follow up with new leads automatically." />
+  <meta name="description" content="How the BitBytes universal booking system works from client onboarding to customer booking and business notifications." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,11 +18,11 @@
       </a>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="testimonials.html">Testimonials</a>
         <a href="case-study.html" class="active">How It Works</a>
         <a href="pricing.html">Pricing</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
-</nav>
+        <a href="testimonials.html">Use Cases</a>
+        <a href="contact.html" class="nav-cta">Book a Demo</a>
+      </nav>
     </div>
   </header>
 
@@ -30,33 +30,128 @@
     <section class="page-hero">
       <div class="container narrow">
         <p class="eyebrow">How it works</p>
-        <h1>A simple system that helps you reply faster and follow up better.</h1>
-        <p>BitBytes is designed to help local businesses respond faster, stay organized, and follow up without everything falling on the owner.</p>
+        <h1>The easiest version is one universal booking engine with client-specific settings.</h1>
+        <p>
+          This page explains the operational model you should sell: a hosted booking and follow-up system that gets customized by the client’s onboarding answers,
+          then embedded into their current site or shared as a direct booking link.
+        </p>
       </div>
     </section>
 
     <section class="services">
       <div class="container two-col-detail">
-        <div class="detail-card">
-          <h2>How it works</h2>
-          <div class="video-frame video-frame-tall">
-            <video class="site-video" controls preload="metadata" playsinline>
-              <source src="assets/video/demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="detail-card">
-          <h2>What we do</h2>
-          <ul class="detail-list">
-            <li>New lead comes in instantly from your website</li>
-            <li>Automatic reply sent within seconds</li>
-            <li>Lead is captured and organized for follow-up</li>
-            <li>Follow-up messages sent automatically if no response</li>
-            <li>Lead guided toward booking or next step</li>
-            <li>No missed opportunities or slow replies</li>
+        <div class="flow-card">
+          <p class="section-tag">Client-facing model</p>
+          <h3>What the client sees</h3>
+          <ul class="flow-list">
+            <li>Pays the setup fee and chooses their support plan</li>
+            <li>Fills out the onboarding form with service, hours, intake, and notification rules</li>
+            <li>Gets a hosted booking page and embed snippet</li>
+            <li>Shares that booking flow on their site and socials</li>
           </ul>
         </div>
+        <div class="flow-card">
+          <p class="section-tag">Your backend model</p>
+          <h3>What you manage</h3>
+          <ul class="flow-list">
+            <li>Store client configuration in one master data source</li>
+            <li>Run one booking automation engine in Make</li>
+            <li>Send notifications to the business based on their preferences</li>
+            <li>Push booking data to Sheets, email, and calendar workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-intro">
+      <div class="container info-split">
+        <div class="flow-card">
+          <p class="section-tag">Recommended stack</p>
+          <h3>Fastest route to launch</h3>
+          <ul class="flow-list">
+            <li><strong>Frontend:</strong> your hosted booking page and embed snippet</li>
+            <li><strong>Automation:</strong> Make for routing, notifications, and follow-up</li>
+            <li><strong>Storage:</strong> Google Sheets first, database later</li>
+            <li><strong>Calendar connection:</strong> Google Calendar or the client’s booking tool if they already use one</li>
+            <li><strong>Payments:</strong> Stripe links for setup and recurring billing</li>
+          </ul>
+        </div>
+        <div class="flow-card">
+          <p class="section-tag">Why this is easier</p>
+          <h3>Do this before trying to build a full SaaS app</h3>
+          <ul class="flow-list">
+            <li>You can launch faster with one static sales site and one automation backend.</li>
+            <li>Clients do not need to learn a complicated new dashboard right away.</li>
+            <li>Most service businesses only care that bookings come in and they get notified.</li>
+            <li>You can upgrade later into a full client portal once the process is proven.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Operational flow</p>
+          <h2>What happens after a customer books</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span>01</span>
+            <h3>Customer submits the booking form</h3>
+            <p>The hosted form collects the business-specific intake questions, desired service, and contact details.</p>
+          </article>
+          <article class="step">
+            <span>02</span>
+            <h3>Make routes the data</h3>
+            <p>The automation identifies which client profile to use, logs the request, and triggers the proper business-side notification.</p>
+          </article>
+          <article class="step">
+            <span>03</span>
+            <h3>Follow-up logic runs automatically</h3>
+            <p>Confirmation, reminders, and follow-up messages go out using the rules you saved from that client’s onboarding form.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container info-split">
+        <div class="flow-card">
+          <p class="section-tag">Embed example</p>
+          <h3>What you eventually give clients</h3>
+          <div class="embed-box">
+            <pre class="code-block">&lt;iframe
+  src="https://yourdomain.com/book.html?client=bb-sample-spa"
+  width="100%"
+  height="880"
+  style="border:0;border-radius:24px;overflow:hidden"
+  loading="lazy"&gt;
+&lt;/iframe&gt;</pre>
+          </div>
+          <p class="mini-note">For social media, the client can also use the direct hosted link instead of the iframe.</p>
+        </div>
+        <div class="flow-card">
+          <p class="section-tag">Important reality check</p>
+          <h3>What still needs backend work beyond this website</h3>
+          <ul class="flow-list">
+            <li>This site now sells the offer and collects onboarding.</li>
+            <li>The universal booking flow itself should be your next build after this refresh.</li>
+            <li>You still need the Make scenarios, Sheets structure, and booking page implementation behind the scenes.</li>
+            <li>That is normal. The easier path is to sell the service first and power it with one backend engine.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-band-wrap">
+        <div>
+          <p class="section-tag light">Next page</p>
+          <h2>Use the onboarding form to collect the exact client data this backend will need.</h2>
+        </div>
+        <a href="onboarding.html" class="btn btn-light">Open onboarding</a>
       </div>
     </section>
   </main>
@@ -65,7 +160,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>BitBytes</strong><span class="footer-sub">automation</span>
-        <p>Lead follow-up systems for growing businesses.</p>
+        <p>Embeddable booking and follow-up systems for service businesses.</p>
       </div>
       <div>
         <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
@@ -73,6 +168,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/site-config.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
