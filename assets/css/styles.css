@@ -544,3 +544,39 @@ main{position:relative}
   .hero-actions{width:100%}
   .nav{gap:.8rem}
 }
+
+
+.service-choice-grid{
+  display:grid;
+  gap:.9rem;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.service-choice{
+  display:flex !important;
+  align-items:center;
+  gap:.75rem;
+  padding:1rem;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.045);
+  cursor:pointer;
+}
+.service-choice input{
+  width:auto;
+  margin:0;
+  accent-color:#76a4ff;
+}
+.service-choice span{font-weight:700;color:#fff}
+.checkbox-row{
+  display:flex !important;
+  align-items:flex-start;
+  gap:.7rem;
+}
+.checkbox-row input{
+  width:auto;
+  margin-top:.25rem;
+  flex-shrink:0;
+}
+@media (max-width: 820px){
+  .service-choice-grid{grid-template-columns:1fr}
+}
