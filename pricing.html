@@ -32,8 +32,8 @@
         <p class="eyebrow">Pricing</p>
         <h1>Simple pricing for one embedded booking system and monthly support.</h1>
         <p>
-          The setup fee gets the booking flow embedded and configured for the client.
-          The monthly plan keeps the automation running, handles edits, and supports follow-up logic over time.
+          The easiest way to sell this is with one default starter payment that covers the embed/setup fee and the first month of service.
+          Clients can also choose prepaid 6-month or 12-month plans if they want the discounted rate.
         </p>
       </div>
     </section>
@@ -42,27 +42,27 @@
       <div class="container">
         <div class="pricing-grid four-up">
           <article class="pricing-card featured">
-            <span class="pricing-eyebrow">Required setup</span>
-            <h3>One-time embed fee</h3>
-            <p class="price">$400 <small>one time</small></p>
-            <p>Used to configure the booking flow, map the client’s onboarding data, and get the form ready to embed on their current site.</p>
+            <span class="pricing-eyebrow">Best starting option</span>
+            <h3>Get started</h3>
+            <p class="price">$1,000 <small>today</small></p>
+            <p>Includes the $400 one-time embed/setup fee plus the first month of service so the client can launch with one payment.</p>
             <ul class="detail-list">
-              <li>Client profile setup</li>
+              <li>$400 embed/setup fee included</li>
+              <li>First month of service included</li>
               <li>Hosted booking page buildout</li>
               <li>Embed-ready form link</li>
-              <li>Business notification routing</li>
               <li>Testing and launch</li>
             </ul>
             <div class="pricing-actions">
-              <a class="btn btn-primary" data-stripe-key="setupOneTime" href="#">Pay setup fee</a>
+              <a class="btn btn-primary" data-stripe-key="setupOneTime" href="#">Get started now</a>
             </div>
           </article>
 
           <article class="pricing-card">
-            <span class="pricing-eyebrow">Standard billing</span>
-            <h3>Monthly support</h3>
+            <span class="pricing-eyebrow">After launch</span>
+            <h3>Monthly renewal</h3>
             <p class="price">$600 <small>per month</small></p>
-            <p>For ongoing use of the booking system, edits, follow-up upkeep, and support after launch.</p>
+            <p>Use this after the initial setup month if you want a standalone recurring billing link for renewals or manual follow-on billing.</p>
             <ul class="detail-list">
               <li>Hosting and automation upkeep</li>
               <li>Follow-up and reminder edits</li>
@@ -71,19 +71,19 @@
               <li>Workflow improvements over time</li>
             </ul>
             <div class="pricing-actions">
-              <a class="btn btn-secondary" data-stripe-key="monthly" href="#">Start monthly plan</a>
+              <a class="btn btn-secondary" data-stripe-key="monthly" href="#">Open monthly billing</a>
             </div>
           </article>
 
           <article class="pricing-card">
             <span class="discount-badge">20% off monthly total</span>
             <h3>6 months prepaid</h3>
-            <p class="price">$2,880 <small>+ $400 setup</small></p>
-            <p>Six months of the $600 plan with the monthly portion discounted by 20%.</p>
+            <p class="price">$3,280 <small>upfront total</small></p>
+            <p>Includes the $400 setup fee plus 6 months of the $600 plan with the monthly portion discounted by 20%.</p>
             <ul class="detail-list">
-              <li>Calculated from 6 × $600 = $3,600</li>
+              <li>6 × $600 = $3,600 monthly portion</li>
               <li>20% discount saves $720</li>
-              <li>Setup fee still applies separately</li>
+              <li>Add the $400 setup fee = $3,280 total</li>
               <li>Best for clients who want a lower effective monthly rate</li>
             </ul>
             <div class="pricing-actions">
@@ -94,12 +94,12 @@
           <article class="pricing-card">
             <span class="discount-badge">20% off monthly total</span>
             <h3>12 months prepaid</h3>
-            <p class="price">$5,760 <small>+ $400 setup</small></p>
-            <p>Twelve months of the $600 plan with the monthly portion discounted by 20%.</p>
+            <p class="price">$6,160 <small>upfront total</small></p>
+            <p>Includes the $400 setup fee plus 12 months of the $600 plan with the monthly portion discounted by 20%.</p>
             <ul class="detail-list">
-              <li>Calculated from 12 × $600 = $7,200</li>
+              <li>12 × $600 = $7,200 monthly portion</li>
               <li>20% discount saves $1,440</li>
-              <li>Setup fee still applies separately</li>
+              <li>Add the $400 setup fee = $6,160 total</li>
               <li>Best for clients who want the longest locked-in rate</li>
             </ul>
             <div class="pricing-actions">
@@ -109,8 +109,7 @@
         </div>
 
         <p class="pricing-inline-note">
-          Only the $400 setup Stripe link is already live in this codebase. Add the monthly, 6-month, and 12-month Stripe links inside
-          <strong>assets/js/site-config.js</strong> and the buttons will update automatically.
+          The checkout links in this page now point to your live Stripe payment links. The $1,000 starter option is the easiest default CTA because it covers setup and the first month in one payment.
         </p>
       </div>
     </section>
