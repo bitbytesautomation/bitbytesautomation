@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pricing | BitBytes Automation</title>
-  <meta name="description" content="Simple pricing for lead response and follow-up automation by BitBytes Automation." />
+  <meta name="description" content="BitBytes pricing for an embedded booking system with automated follow-up and business notifications." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,10 +18,10 @@
       </a>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="testimonials.html">Testimonials</a>
         <a href="case-study.html">How It Works</a>
         <a href="pricing.html" class="active">Pricing</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
+        <a href="testimonials.html">Use Cases</a>
+        <a href="contact.html" class="nav-cta">Book a Demo</a>
       </nav>
     </div>
   </header>
@@ -30,81 +30,113 @@
     <section class="page-hero">
       <div class="container narrow">
         <p class="eyebrow">Pricing</p>
-        <h1>Simple pricing with a clear return.</h1>
-        <p>Pay once to get set up, then pay the monthly fee for ongoing support and updates. If you cancel and come back later, you do not need to pay the setup fee again.</p>
+        <h1>Simple pricing for one embedded booking system and monthly support.</h1>
+        <p>
+          The setup fee gets the booking flow embedded and configured for the client.
+          The monthly plan keeps the automation running, handles edits, and supports follow-up logic over time.
+        </p>
       </div>
     </section>
 
     <section class="services">
       <div class="container">
-        <div class="cards three-up">
-          <article class="detail-card">
-            <p class="section-tag">Setup</p>
-            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">$100 setup fee</h2>
-            <p>A simple setup process one time fee. If you already have a website, we will plug into yours.</p>
-            <ul class="detail-list" style="margin-top: 1rem;">
-              <li>Lead form automation</li>
-              <li>Instant reply email</li>
-              <li>Lead tracking sheet</li>
-              <li>Basic follow-up flow</li>
-              <li>Setup and testing</li>
+        <div class="pricing-grid four-up">
+          <article class="pricing-card featured">
+            <span class="pricing-eyebrow">Required setup</span>
+            <h3>One-time embed fee</h3>
+            <p class="price">$400 <small>one time</small></p>
+            <p>Used to configure the booking flow, map the client’s onboarding data, and get the form ready to embed on their current site.</p>
+            <ul class="detail-list">
+              <li>Client profile setup</li>
+              <li>Hosted booking page buildout</li>
+              <li>Embed-ready form link</li>
+              <li>Business notification routing</li>
+              <li>Testing and launch</li>
             </ul>
-            <div class="hero-actions" style="margin-top: 1.5rem;">
-              <a href="https://buy.stripe.com/bJe28k8Fd5474DIct083C00" class="btn btn-primary">Get Started</a>
+            <div class="pricing-actions">
+              <a class="btn btn-primary" data-stripe-key="setupOneTime" href="#">Pay setup fee</a>
             </div>
           </article>
 
-          <article class="detail-card">
-            <p class="section-tag">Advanced Setup</p>
-            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">$400 one-time fee</h2>
-            <p>For businesses that need a full site built for them before the automation is set up.</p>
-            <ul class="detail-list" style="margin-top: 1rem;">
-              <li>Website built for your business</li>
-              <li>Lead form automation</li>
-              <li>Instant reply email</li>
-              <li>Lead tracking sheet</li>
-              <li>Setup and testing</li>
+          <article class="pricing-card">
+            <span class="pricing-eyebrow">Standard billing</span>
+            <h3>Monthly support</h3>
+            <p class="price">$600 <small>per month</small></p>
+            <p>For ongoing use of the booking system, edits, follow-up upkeep, and support after launch.</p>
+            <ul class="detail-list">
+              <li>Hosting and automation upkeep</li>
+              <li>Follow-up and reminder edits</li>
+              <li>Form updates and service changes</li>
+              <li>Basic support and maintenance</li>
+              <li>Workflow improvements over time</li>
             </ul>
-            <div class="hero-actions" style="margin-top: 1.5rem;">
-              <a href="https://buy.stripe.com/cNi6oA8FddAD6LQgJg83C01" class="btn btn-primary">Get Started</a>
+            <div class="pricing-actions">
+              <a class="btn btn-secondary" data-stripe-key="monthly" href="#">Start monthly plan</a>
             </div>
           </article>
 
-          <article class="detail-card">
-            <p class="section-tag">Support</p>
-            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">$600/month</h2>
-            <p>Good for businesses that want changes, updates, and active support.</p>
-            <ul class="detail-list" style="margin-top: 1rem;">
-              <li>Workflow updates</li>
-              <li>Email copy changes</li>
-              <li>Basic maintenance</li>
-              <li>Small system edits</li>
-              <li>Active support</li>
+          <article class="pricing-card">
+            <span class="discount-badge">20% off monthly total</span>
+            <h3>6 months prepaid</h3>
+            <p class="price">$2,880 <small>+ $400 setup</small></p>
+            <p>Six months of the $600 plan with the monthly portion discounted by 20%.</p>
+            <ul class="detail-list">
+              <li>Calculated from 6 × $600 = $3,600</li>
+              <li>20% discount saves $720</li>
+              <li>Setup fee still applies separately</li>
+              <li>Best for clients who want a lower effective monthly rate</li>
             </ul>
-            
+            <div class="pricing-actions">
+              <a class="btn btn-secondary" data-stripe-key="sixMonth" href="#">Buy 6 months</a>
+            </div>
+          </article>
+
+          <article class="pricing-card">
+            <span class="discount-badge">20% off monthly total</span>
+            <h3>12 months prepaid</h3>
+            <p class="price">$5,760 <small>+ $400 setup</small></p>
+            <p>Twelve months of the $600 plan with the monthly portion discounted by 20%.</p>
+            <ul class="detail-list">
+              <li>Calculated from 12 × $600 = $7,200</li>
+              <li>20% discount saves $1,440</li>
+              <li>Setup fee still applies separately</li>
+              <li>Best for clients who want the longest locked-in rate</li>
+            </ul>
+            <div class="pricing-actions">
+              <a class="btn btn-secondary" data-stripe-key="twelveMonth" href="#">Buy 12 months</a>
+            </div>
           </article>
         </div>
+
+        <p class="pricing-inline-note">
+          Only the $400 setup Stripe link is already live in this codebase. Add the monthly, 6-month, and 12-month Stripe links inside
+          <strong>assets/js/site-config.js</strong> and the buttons will update automatically.
+        </p>
       </div>
     </section>
 
     <section class="video-intro">
-      <div class="container intro-wrap">
-        <div>
-          <p class="section-tag">What’s included</p>
-          <h2>Built to save time and help you answer leads faster.</h2>
-          <p>
-            Every setup is meant to make new leads feel answered right away while keeping your follow-up process cleaner and easier to manage.
-          </p>
+      <div class="container comparison-grid">
+        <div class="compare-card bad">
+          <p class="section-tag">Old way</p>
+          <h3>Scattered booking process</h3>
+          <ul class="detail-list">
+            <li>Contact form on one page</li>
+            <li>DMs and text messages mixed together</li>
+            <li>Manual follow-up</li>
+            <li>No consistent reminder flow</li>
+            <li>Appointments easy to miss</li>
+          </ul>
         </div>
-        <div class="detail-card">
-          <h3>Great fit for:</h3>
-          <ul class="detail-list" style="margin-top: 1rem;">
-            <li>Contractors</li>
-            <li>Detailers</li>
-            <li>Barbers</li>
-            <li>Gyms</li>
-            <li>Cleaners</li>
-            <li>Other local service businesses</li>
+        <div class="compare-card good">
+          <p class="section-tag">BitBytes way</p>
+          <h3>One booking and communication system</h3>
+          <ul class="detail-list">
+            <li>One hosted form or booking link</li>
+            <li>Embeds on the existing website</li>
+            <li>Automatic confirmations and follow-up</li>
+            <li>Business notifications built in</li>
+            <li>Easier to maintain over time</li>
           </ul>
         </div>
       </div>
@@ -113,10 +145,10 @@
     <section class="cta-band">
       <div class="container cta-band-wrap">
         <div>
-          <p class="section-tag light">Ready to stop missing leads?</p>
-          <h2>Let’s build a better system for your business.</h2>
+          <p class="section-tag light">After payment</p>
+          <h2>Send clients straight into your onboarding form.</h2>
         </div>
-        <a href="contact.html" class="btn btn-light">Contact BitBytes</a>
+        <a href="onboarding.html" class="btn btn-light">Open onboarding</a>
       </div>
     </section>
   </main>
@@ -125,7 +157,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>BitBytes</strong><span class="footer-sub">automation</span>
-        <p>Lead follow-up systems for growing businesses.</p>
+        <p>Embeddable booking and follow-up systems for service businesses.</p>
       </div>
       <div>
         <p><a href="mailto:bitbytesautomation@proton.me">bitbytesautomation@proton.me</a></p>
@@ -133,6 +165,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/site-config.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
